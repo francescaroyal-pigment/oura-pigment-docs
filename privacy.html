@@ -1,22 +1,46 @@
 <!DOCTYPE html>
 <html>
-<head><title>Privacy Policy - Oura-Pigment Sandbox</title></head>
+<head>
+    <title>Privacy Policy - Francesca's Oura-Pigment Sandbox</title>
+    <style>body { font-family: sans-serif; line-height: 1.6; max-width: 800px; margin: 40px auto; padding: 0 20px; }</style>
+</head>
 <body>
     <h1>Privacy Policy</h1>
     <p><strong>Effective Date:</strong> April 6, 2026</p>
     
-    <h2>1. Data Collection</h2>
-    <p>This application ("Sandbox") accesses Oura Ring data via the Oura API v2. Specifically, it requests access to Sleep, Activity, Readiness, and Resilience scores.</p>
-    
-    <h2>2. Data Usage</h2>
-    <p>The collected data is used exclusively for personal visualization within a private Pigment workspace. Data is processed via a private script and is not shared with any third parties other than Pigment.</p>
-    
-    <h2>3. Data Storage</h2>
-    <p>OAuth tokens (Access and Refresh tokens) are stored securely in a private environment (e.g., GitHub Secrets or AWS Vault). No health data is stored permanently outside of the destination Pigment account.</p>
-    
-    <h2>4. User Rights</h2>
-    <p>As the sole user of this application, I reserve the right to revoke API access at any time via the Oura Cloud settings.</p>
+    <h2>1. Introduction</h2>
+    <p>This "Sandbox" is a private, personal integration designed to automate the transfer of Oura Ring health data into a private Pigment workspace for personal analytics. This policy outlines the specific data accessed and how it is handled.</p>
 
-    <p><a href="index.html">Back to Home</a></p>
+    <h2>2. Data Collection (Oura API Scopes)</h2>
+    <p>This application requests access to the following data categories from the Oura API v2:</p>
+    <ul>
+        <li><strong>Identity:</strong> Email and Personal profile information.</li>
+        <li><strong>Daily Summaries:</strong> Daily activity, readiness, and sleep scores.</li>
+        <li><strong>Biometrics:</strong> Heart rate (resting and continuous), SpO2 (blood oxygen), and Heart Health metrics.</li>
+        <li><strong>Wellness & Stress:</strong> Stress levels, resilience scores, and tagged "Moments" or Sessions.</li>
+        <li><strong>Activities:</strong> Recorded workouts and active heart rate data.</li>
+        <li><strong>Device Info:</strong> Ring configuration and hardware status.</li>
+    </ul>
+
+    <h2>3. Data Usage & Destination</h2>
+    <p>The data is used solely for Francesca's personal tracking. The workflow is as follows:</p>
+    <ul>
+        <li>Data is pulled from the Oura Cloud API using OAuth2 credentials.</li>
+        <li>Data is transformed into a CSV format compatible with Pigment.</li>
+        <li>Data is pushed via API to a private Pigment workspace (Transaction Lists).</li>
+    </ul>
+
+    <h2>4. Data Storage and Security</h2>
+    <ul>
+        <li><strong>No Third-Party Sharing:</strong> Data is never sold, shared, or used for marketing.</li>
+        <li><strong>Minimal Retention:</strong> No health data is stored permanently on the server or script runner. It exists only in transit between Oura and Pigment.</li>
+        <li><strong>Secret Management:</strong> API keys and OAuth tokens are stored as encrypted secrets and are not hard-coded or publicly accessible.</li>
+    </ul>
+
+    <h2>5. Controlling Your Data</h2>
+    <p>As the sole user, you may revoke this application's access at any time through your Oura Cloud account settings. Revoking access will immediately stop the data sync to Pigment.</p>
+
+    <hr>
+    <p><a href="index.html">Back to Home</a> 
 </body>
 </html>
